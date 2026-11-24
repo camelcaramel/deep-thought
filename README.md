@@ -76,7 +76,7 @@ Java는 따로 설치하지 않아도 됩니다. 설치 파일 안에 들어 있
 
 | PC | 받을 파일 | Java 설치 |
 | --- | --- | --- |
-| Windows 10·11 | `IncidentSim-0.2.0-windows-portable.zip` (압축만 풀면 실행) | 필요 없음 (안에 들어 있음) |
+| Windows 10·11 | `IncidentSim-0.2.1-windows-portable.zip` (압축만 풀면 실행) | 필요 없음 (안에 들어 있음) |
 | macOS, 또는 위 파일이 안 될 때 | `incident-sim-fallback.zip` (예비용 묶음) | **JDK 21 이상 필요** |
 
 받은 파일이 손상되지 않았는지 확인하고 싶으면 릴리스에 적힌 SHA-256 값과 비교하세요.
@@ -87,13 +87,13 @@ Java는 따로 설치하지 않아도 됩니다. 설치 파일 안에 들어 있
 
 선생님에게 받은 파일이 무엇인지에 따라 둘 중 하나를 따릅니다.
 
-**설치 파일(`IncidentSim-0.2.0.msi`)을 받았다면**
+**설치 파일(`IncidentSim-0.2.1.msi`)을 받았다면**
 1. `.msi`를 더블클릭합니다.
 2. "Windows의 PC 보호" 파란 창이 뜨면 **추가 정보 → 실행**을 누릅니다. (서명하지 않은 실험용 프로그램이라 뜨는 경고입니다)
 3. 설치 폴더는 기본값 그대로 두고 **다음 → 설치**를 누릅니다.
 4. 시작 메뉴나 바탕 화면에 **IncidentSim**이 생깁니다.
 
-**압축 파일(`IncidentSim-0.2.0-windows-portable.zip`)을 받았다면**
+**압축 파일(`IncidentSim-0.2.1-windows-portable.zip`)을 받았다면**
 1. 압축을 원하는 곳에 풉니다. 예: `C:\IncidentSim`
    - 바탕 화면이나 OneDrive 폴더보다는 짧은 경로를 권합니다.
 2. 풀린 폴더의 `IncidentSim\IncidentSim.exe`를 실행합니다.
@@ -102,7 +102,7 @@ Java는 따로 설치하지 않아도 됩니다. 설치 파일 안에 들어 있
 ### macOS
 
 macOS용 설치 파일(`.dmg`)은 아직 공개하지 않았습니다. 선생님이 `.dmg`를 줬다면:
-1. `IncidentSim-0.2.0.dmg`를 엽니다.
+1. `IncidentSim-0.2.1.dmg`를 엽니다.
 2. `IncidentSim`을 **응용 프로그램** 폴더로 끌어다 놓습니다.
 3. 처음 열 때 "확인되지 않은 개발자" 경고가 뜨면, 응용 프로그램 폴더에서 앱을 **오른쪽 클릭 → 열기 → 열기**를 누릅니다.
 
