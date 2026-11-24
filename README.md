@@ -56,7 +56,7 @@
 
 | 항목 | 내용 |
 | --- | --- |
-| PC | Windows 10·11 또는 macOS. RAM 8GB 이상 (16GB 권장), 디스크 여유 2GB |
+| PC | Windows 10·11, macOS 또는 Ubuntu(64비트). RAM 8GB 이상 (16GB 권장), 디스크 여유 2GB |
 | 인터넷 | 처음 빌드할 때 라이브러리를 내려받고, AI 담당자와 대화할 때 필요합니다 |
 | 설치 파일 | 선생님이 나눠 준 파일 또는 [릴리스](https://github.com/camelcaramel/incident-sim-tester/releases/latest)의 파일 (아래 3장) |
 | AI 코딩 도구 | 평소 쓰는 것 아무거나 (Claude Code, Cursor, Copilot, ChatGPT 등). 제한 없음 |
@@ -76,7 +76,8 @@ Java는 따로 설치하지 않아도 됩니다. 설치 파일 안에 들어 있
 
 | PC | 받을 파일 | Java 설치 |
 | --- | --- | --- |
-| Windows 10·11 | `IncidentSim-0.2.1-windows-portable.zip` (압축만 풀면 실행) | 필요 없음 (안에 들어 있음) |
+| Windows 10·11 | `IncidentSim-0.2.2-windows-portable.zip` (압축만 풀면 실행) | 필요 없음 (안에 들어 있음) |
+| Ubuntu (64비트) | `IncidentSim-0.2.2-linux-x64-portable.tar.gz` (압축을 풀고 터미널에서 실행) | 필요 없음 (안에 들어 있음) |
 | macOS, 또는 위 파일이 안 될 때 | `incident-sim-fallback.zip` (예비용 묶음) | **JDK 21 이상 필요** |
 
 받은 파일이 손상되지 않았는지 확인하고 싶으면 릴리스에 적힌 SHA-256 값과 비교하세요.
@@ -87,13 +88,13 @@ Java는 따로 설치하지 않아도 됩니다. 설치 파일 안에 들어 있
 
 선생님에게 받은 파일이 무엇인지에 따라 둘 중 하나를 따릅니다.
 
-**설치 파일(`IncidentSim-0.2.1.msi`)을 받았다면**
+**설치 파일(`IncidentSim-0.2.2.msi`)을 받았다면**
 1. `.msi`를 더블클릭합니다.
 2. "Windows의 PC 보호" 파란 창이 뜨면 **추가 정보 → 실행**을 누릅니다. (서명하지 않은 실험용 프로그램이라 뜨는 경고입니다)
 3. 설치 폴더는 기본값 그대로 두고 **다음 → 설치**를 누릅니다.
 4. 시작 메뉴나 바탕 화면에 **IncidentSim**이 생깁니다.
 
-**압축 파일(`IncidentSim-0.2.1-windows-portable.zip`)을 받았다면**
+**압축 파일(`IncidentSim-0.2.2-windows-portable.zip`)을 받았다면**
 1. 압축을 원하는 곳에 풉니다. 예: `C:\IncidentSim`
    - 바탕 화면이나 OneDrive 폴더보다는 짧은 경로를 권합니다.
 2. 풀린 폴더의 `IncidentSim\IncidentSim.exe`를 실행합니다.
@@ -102,11 +103,23 @@ Java는 따로 설치하지 않아도 됩니다. 설치 파일 안에 들어 있
 ### macOS
 
 macOS용 설치 파일(`.dmg`)은 아직 공개하지 않았습니다. 선생님이 `.dmg`를 줬다면:
-1. `IncidentSim-0.2.1.dmg`를 엽니다.
+1. `IncidentSim-0.2.2.dmg`를 엽니다.
 2. `IncidentSim`을 **응용 프로그램** 폴더로 끌어다 놓습니다.
 3. 처음 열 때 "확인되지 않은 개발자" 경고가 뜨면, 응용 프로그램 폴더에서 앱을 **오른쪽 클릭 → 열기 → 열기**를 누릅니다.
 
 `.dmg`가 없으면 아래 **예비용 묶음**을 씁니다. 터미널에서 `java -version`을 쳐서 21 이상이 나오는지 먼저 확인하세요. 없으면 [Adoptium](https://adoptium.net/)에서 **JDK 21**을 설치합니다.
+
+### Ubuntu (Linux)
+
+64비트 PC(x64)용입니다. Java는 설치하지 않아도 됩니다.
+1. 터미널을 열고 받은 폴더로 갑니다. 예: `cd ~/다운로드` (영어 환경은 `cd ~/Downloads`)
+2. 압축을 풉니다: `tar xzf IncidentSim-0.2.2-linux-x64-portable.tar.gz`
+   - 파일 관리자에서 "여기에 풀기"로 풀어도 됩니다.
+3. 실행합니다: `./IncidentSim/bin/IncidentSim`
+   - 파일 관리자에서 더블클릭하면 안 열릴 수 있으니 터미널에서 실행하세요.
+   - **실행한 터미널 창을 닫으면 프로그램도 꺼집니다.** 다 쓸 때까지 열어 두세요.
+
+Chrome이나 Edge(deb로 설치한 것)가 있으면 앱 창으로, 없으면 Firefox 같은 기본 브라우저로 열립니다.
 
 ### 예비용 묶음 (설치 파일이 안 될 때만)
 
@@ -175,7 +188,7 @@ macOS용 설치 파일(`.dmg`)은 아직 공개하지 않았습니다. 선생님
 3. 코드를 고칩니다. AI 도구에 무엇을 시켰고 어떤 답을 받았는지는 나중에 보고서에 쓰니 대화를 지우지 마세요.
 4. 원하면 코드베이스에서 직접 테스트를 돌려도 됩니다.
    - Windows: `gradlew.bat test`
-   - macOS: `./gradlew test`
+   - macOS·Ubuntu: `./gradlew test`
 5. Git 커밋은 해도 되고 안 해도 됩니다. 런처는 **폴더에 있는 지금 파일 그대로** 빌드합니다.
 
 ### ③ 로컬 확인 (배포 화면) — 몇 번이든 가능
@@ -295,7 +308,7 @@ AI 코딩 도구에 로그 줄이나 담당자 답변을 붙여 넣고 같이 �
 | 포트가 사용 중이래요 | 다른 IncidentSim 창이나 직접 띄운 매점 서비스를 끄고 다시 실행합니다 |
 
 **Q. 코드베이스에서 매점 서비스를 직접 띄워 봐도 되나요?**
-네. 코드베이스 폴더에서 `gradlew.bat bootRun`(macOS는 `./gradlew bootRun`)으로 띄우면 `http://localhost:8080`에서 동작합니다. 샘플 데이터가 들어 있는 로컬용 설정입니다. 런처의 로컬 확인·운영 배포와는 별개입니다.
+네. 코드베이스 폴더에서 `gradlew.bat bootRun`(macOS·Ubuntu는 `./gradlew bootRun`)으로 띄우면 `http://localhost:8080`에서 동작합니다. 샘플 데이터가 들어 있는 로컬용 설정입니다. 런처의 로컬 확인·운영 배포와는 별개입니다.
 
 **Q. 런처가 내 코드베이스 폴더에 파일을 만드나요?**
 아니요. 빌드 결과물과 실행 기록은 모두 사용자 폴더의 `.incident-sim`에만 생깁니다.
