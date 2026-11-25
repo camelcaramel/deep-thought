@@ -106,7 +106,7 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 | 언제 | 무엇을 | 크기 |
 | --- | --- | --- |
 | 처음 켤 때 | 프로그램 본체 | 31.8MB |
-| 처음 켤 때, PC에 JDK 21이 없으면 | Java 실행 환경 | 약 205MB |
+| 처음 켤 때, PC에 JDK 21이 없으면 | Java 실행 환경 | 약 200MB |
 | 첫 문제를 준비할 때 | 빌드 도구(Gradle)와 라이브러리 | 약 210MB |
 
 링크는 늘 최신판입니다. 받은 파일이 손상되지 않았는지 확인하려면 [릴리스 페이지](https://github.com/camelcaramel/incident-sim-tester/releases/latest)에 적힌 SHA-256 값과 비교하세요.
