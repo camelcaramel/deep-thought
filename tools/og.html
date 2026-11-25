@@ -1,0 +1,47 @@
+<!doctype html>
+<!--
+  docs/assets/og.png (1200x630) 의 원본. 디자인 시스템 Cover 부품의 표식 무늬를 따른다.
+  다시 만들기 (저장소 루트, PowerShell):
+  & "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" - -headless=new - -hide-scrollbars - -force-device-scale-factor=1 `
+    - -virtual-time-budget=8000 - -window-size=1200,630 "- -screenshot=$PWD\docs\assets\og.png" "file:///$PWD/tools/og.html"
+  (HTML 주석이라 "- -" 로 적었다. 실행할 때는 붙여 쓴다)
+-->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Deep Thought</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700;900&amp;display=swap">
+<link rel="stylesheet" href="../docs/assets/tokens.css">
+<style>
+body { margin: 0; background: var(--ground); }
+.og { position: relative; width: 1200px; height: 630px; overflow: hidden; background: var(--ground); color: var(--ink); font-family: var(--font-sans); word-break: keep-all; }
+svg { position: absolute; left: 660px; top: 0; }
+.ink { fill: var(--ink); }
+.ground { fill: var(--ground); }
+.text { position: absolute; left: 64px; bottom: 56px; width: 580px; }
+.name { margin: 0; font-size: 128px; font-weight: 900; line-height: 0.95; letter-spacing: -0.05em; }
+.tag { margin: 28px 0 0; font-size: 34px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.3; }
+</style>
+</head>
+<body>
+<div class="og">
+<!-- 검은 판 540x630, 90px 칸 6x7. 표식의 계단을 바탕색 칸으로 뚫는다 -->
+<svg width="540" height="630" viewBox="0 0 6 7" aria-hidden="true">
+<rect class="ink" width="6" height="7"/>
+<rect class="ground" x="0" y="0" width="1" height="1"/>
+<rect class="ground" x="1" y="1" width="1" height="1"/>
+<rect class="ground" x="2" y="2" width="1" height="1"/>
+<rect class="ground" x="3" y="3" width="1" height="1"/>
+<rect class="ground" x="4" y="4" width="1" height="1"/>
+<rect class="ground" x="5" y="5" width="1" height="1"/>
+<rect class="ground" x="3" y="0" width="1" height="1"/>
+<rect class="ground" x="4" y="1" width="1" height="1"/>
+<rect class="ground" x="5" y="2" width="1" height="1"/>
+</svg>
+<div class="text">
+<p class="name">Deep<br>Thought</p>
+<p class="tag">생각해야 풀리는 실무 문제</p>
+</div>
+</div>
+</body>
+</html>
