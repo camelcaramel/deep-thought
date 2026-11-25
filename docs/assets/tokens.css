@@ -1,4 +1,4 @@
-/* 출처: incident-sim 저장소 docs/design-system/tokens.css 의 사본 (2026-11-25). 여기서 고치지 말고 원본을 고친 뒤 다시 복사한다. */
+/* 출처: incident-sim 저장소 docs/design-system/tokens.css 의 사본 (2026-11-26). 여기서 고치지 말고 원본을 고친 뒤 다시 복사한다. */
 /* Deep Thought — tokens.json 에서 옮긴 파일. 값의 기준은 tokens.json 이고, 값을 바꿀 때는 두 파일을 함께 고친다. */
 /* 글꼴: https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap */
 
@@ -65,7 +65,8 @@
 
   /* 글꼴 */
   --font-sans: 'Gothic A1', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
-  --font-mono: 'IBM Plex Mono', Consolas, 'D2Coding', monospace;
+  /* 고정폭에는 한글이 없다. 고정폭 폴백(굴림체)으로 넘어가기 전에 본문 한글 글꼴을 쓴다 */
+  --font-mono: 'IBM Plex Mono', Consolas, 'D2Coding', 'Gothic A1', 'Malgun Gothic', 'Apple SD Gothic Neo', monospace;
 }
 
 /* 글자 모양 */

@@ -55,7 +55,7 @@
         <a class="link" data-get-other href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-macos.zip">macOS용</a>
         <a class="link" data-get-other href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-ubuntu.deb">Ubuntu용</a>
       </p>
-      <p class="say">설치판 1MB 이하 · 처음 켤 때 약 230MB를 내려받습니다</p>
+      <p class="say">설치 파일은 <span data-my-size>151KB</span>입니다. 나머지는 필요할 때 받습니다. <a href="#sizes">받는 양 보기</a></p>
       <p class="note" data-release hidden></p>
       <p class="say" data-mobile hidden>PC에서 쓰는 프로그램입니다. 이 주소를 PC에서 여세요.</p>
     </div>
@@ -75,6 +75,7 @@
   <h2 id="h-diff" class="title">AI를 마음껏 쓰세요. 판단은 직접 합니다.</h2>
   <dl class="pairs">
     <div><dt>AI에 제한이 없습니다</dt><dd>평소 쓰는 AI 코딩 도구를 그대로 쓰세요. 무엇을 시켰고 무엇을 받아들였는지는 보고서에 남깁니다.</dd></div>
+    <div><dt>통째로 맡기면 풀리지 않습니다</dt><dd>티켓을 AI에게 그대로 넘겨서는 풀리지 않게 만들었습니다. 로그를 읽고 동료에게 물어야 풀립니다.</dd></div>
     <div><dt>정답보다 근거를 봅니다</dt><dd>맞혔는지보다 무엇을 보고 그렇게 판단했는지가 중요합니다. 근거는 로그, 동료의 답, 실행 결과입니다.</dd></div>
     <div><dt>운영 배포는 되돌릴 수 없습니다</dt><dd>로컬 확인은 몇 번이든 할 수 있지만 운영 배포는 한 단계에 한&nbsp;번입니다. 언제 누를지 스스로 정합니다.</dd></div>
     <div><dt>고치지 않고 답할 수 있습니다</dt><dd>모든 문제에 “수정하지 않고 답하기”가 있습니다. 고치지 않기로 했다면 그 이유를 요청자에게 적어 보냅니다.</dd></div>
@@ -84,10 +85,10 @@
 <section class="flow" id="flow" aria-labelledby="h-flow">
   <div class="block flow-head">
     <h2 id="h-flow" class="title">문제 하나는 이렇게 진행됩니다</h2>
-    <p class="lead measure">문제 하나에 수업 2시간 정도 걸립니다. 보고서는 3일 안에 냅니다.</p>
+    <p class="lead measure">문제는 네 가지입니다. 한 줄짜리 수정부터 Java 파일이 1,000개가 넘는 서비스까지 있습니다. 문제 하나에 수업 2시간 정도 걸리고, 보고서는 3일 안에 냅니다.</p>
   </div>
   <ol class="steps" id="steps" aria-label="진행 단계">
-    <li class="now" aria-current="step"><b>01<span class="of"> / 05</span></b><span>티켓</span></li>
+    <li><b>01<span class="of"> / 05</span></b><span>티켓</span></li>
     <li><b>02<span class="of"> / 05</span></b><span>수정 · 로컬 확인</span></li>
     <li><b>03<span class="of"> / 05</span></b><span>운영 배포</span></li>
     <li><b>04<span class="of"> / 05</span></b><span>결과에 대응</span></li>
@@ -182,7 +183,7 @@
 <section class="split" id="download" aria-labelledby="h-download">
   <div class="col">
     <h2 id="h-download" class="title">내려받기</h2>
-    <p class="lead measure">작은 설치판을 받아 실행하면 나머지를 스스로 내려받습니다. Java는 따로 설치하지 않아도 됩니다.</p>
+    <p class="lead measure">작은 설치 파일을 받아 실행하면 나머지를 필요할 때 스스로 받습니다. Java는 따로 설치하지 않아도 됩니다.</p>
     <div class="get" data-get>
       <a class="primary" data-get-main href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-windows.exe"><span data-get-label>Windows용 내려받기</span><svg aria-hidden="true" width="16" height="28" viewBox="0 0 16 28" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 0v25M1 18l7 7 7-7"/></svg></a>
       <p class="note" data-release hidden></p>
@@ -190,35 +191,40 @@
     </div>
     <ul class="files">
       <li data-asset="IncidentSim-windows.exe">
-        <span class="os">Windows 10 · 11</span>
+        <span class="os">Windows 10 · 11 (64비트)</span>
         <a class="link path" href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-windows.exe">IncidentSim-windows.exe</a>
-        <span class="cap" data-size hidden></span>
+        <span class="cap" data-size>151KB</span>
         <span class="sha" data-sha hidden></span>
       </li>
       <li data-asset="IncidentSim-macos.zip">
-        <span class="os">macOS · Apple Silicon, Intel</span>
+        <span class="os">macOS 11 이상 (Apple Silicon · Intel)</span>
         <a class="link path" href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-macos.zip">IncidentSim-macos.zip</a>
-        <span class="cap" data-size hidden></span>
+        <span class="cap" data-size>13KB</span>
         <span class="sha" data-sha hidden></span>
       </li>
       <li data-asset="IncidentSim-ubuntu.deb">
-        <span class="os">Ubuntu 64비트</span>
+        <span class="os">Ubuntu 22.04 이상 (64비트)</span>
         <a class="link path" href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-ubuntu.deb">IncidentSim-ubuntu.deb</a>
-        <span class="cap" data-size hidden></span>
+        <span class="cap" data-size>13KB</span>
         <span class="sha" data-sha hidden></span>
       </li>
     </ul>
   </div>
-  <div class="col side">
-    <p class="eyebrow">처음 켤 때 내려받는 양 (약)</p>
-    <p class="xl">230<span class="unit">MB</span></p>
-    <p class="say">이 PC에 JDK 21이 있으면 더 적습니다. 두 번째부터는 바뀐 것만 받습니다.</p>
+  <div class="col side" id="sizes">
+    <p class="eyebrow">설치 파일 · <span data-my-os>Windows</span></p>
+    <p class="xl"><span data-my-size="unit">151<span class="unit">KB</span></span></p>
+    <p class="say">먼저 받는 것은 이것뿐입니다. 나머지는 필요할 때 한 번씩 받고, 그다음부터는 바뀐 것만 받습니다.</p>
+    <ul class="kv need">
+      <li><span>처음 켤 때 · 프로그램 본체</span><b>31.8MB</b></li>
+      <li><span>처음 켤 때 · Java 실행 환경<br><small>PC에 JDK 21이 있으면 받지 않습니다</small></span><b>약 205MB</b></li>
+      <li><span>첫 문제를 준비할 때 · 빌드 도구(Gradle)와 라이브러리</span><b>약 210MB</b></li>
+    </ul>
     <p class="eyebrow gap">준비물</p>
     <ul class="kv">
-      <li><span>운영 체제</span><b>Windows 10·11, macOS, Ubuntu(64비트)</b></li>
+      <li><span>운영 체제</span><b>Windows 10·11, macOS 11 이상, Ubuntu 22.04 이상</b></li>
       <li><span>메모리</span><b>8GB 이상, 16GB 권장</b></li>
       <li><span>디스크</span><b>남은 공간 2GB 이상</b></li>
-      <li><span>인터넷</span><b>처음 켤 때, 첫 빌드, 질문할 때</b></li>
+      <li><span>인터넷</span><b>처음 켤 때, 첫 문제 준비, 질문할 때</b></li>
       <li><span>코드 편집기</span><b>평소 쓰는 것</b></li>
       <li><span>AI 코딩 도구</span><b>평소 쓰는 것, 제한 없음</b></li>
       <li><span>Discord</span><b>동료에게 질문할 때</b></li>
@@ -228,38 +234,41 @@
 
 <section class="block" id="install" aria-labelledby="h-install">
   <h2 id="h-install" class="title">설치</h2>
-  <p class="lead measure">서명하지 않은 실험용 프로그램이라 처음 열 때 보안 경고가 나옵니다. 아래 순서대로 여세요.</p>
+  <p class="lead measure">코드 서명이 없는 실험용 프로그램이라 처음 열 때 Windows SmartScreen이나 macOS Gatekeeper의 경고가 뜰 수 있습니다. 아래 순서대로 여세요.</p>
   <div class="folds">
     <details data-os="windows" open>
-      <summary>Windows 10 · 11</summary>
+      <summary>Windows 10 · 11 (64비트)</summary>
       <ol class="how">
         <li><code>IncidentSim-windows.exe</code>를 내려받으세요. 브라우저가 막으면 내려받기 목록에서 <b>유지</b>를 고르세요.</li>
         <li>받은 파일을 두 번 눌러 실행하세요.</li>
         <li>“Windows의 PC 보호” 창이 나오면 <b>추가 정보</b>를 누르고 <b>실행</b>을 누르세요.</li>
-        <li>설치가 끝나면 나머지 파일을 내려받습니다. 다 받으면 프로그램 창이 열립니다.</li>
-        <li>다음부터는 시작 메뉴의 바로 가기로 여세요.</li>
+        <li>내려받을 크기를 확인하고 <b>설치하고 시작</b>을 누르세요. 관리자 권한은 필요하지 않습니다. 다 받으면 프로그램 창이 열립니다.</li>
+        <li>다음부터는 시작 메뉴의 <b>Deep Thought</b>로 여세요. 받은 설치 파일은 지워도 됩니다.</li>
       </ol>
     </details>
     <details data-os="macos">
-      <summary>macOS</summary>
+      <summary>macOS 11 이상</summary>
       <ol class="how">
         <li><code>IncidentSim-macos.zip</code>을 내려받아 압축을 푸세요. Safari는 저절로 풉니다.</li>
         <li><code>IncidentSim</code> 앱을 <b>응용 프로그램</b> 폴더로 옮기고 두 번 눌러 여세요.</li>
-        <li>열 수 없다는 경고가 나오면 <b>완료</b>를 누르세요. 휴지통으로 옮기지 마세요.</li>
-        <li><b>시스템 설정 → 개인정보 보호 및 보안</b>을 열고 아래쪽에서 <b>그래도 열기</b>를 누르세요. 다시 묻는 창에서도 여세요.</li>
-        <li>나머지 파일을 다 받으면 프로그램 창이 열립니다. 다음부터는 경고 없이 열립니다.</li>
+        <li>열 수 없다는 경고가 나오면 <b>완료</b>(또는 <b>취소</b>)를 누르세요. 휴지통으로 옮기지 마세요.</li>
+        <li><b>시스템 설정 → 개인정보 보호 및 보안</b>을 열고 아래쪽 IncidentSim 옆의 <b>그래도 열기</b>를 누르세요. 다시 묻는 창에서도 여세요. macOS 14 이하는 앱을 <b>오른쪽 클릭 → 열기 → 열기</b>로도 됩니다.</li>
+        <li>내려받을 크기를 확인하고 <b>설치하고 시작</b>을 누르세요. 받는 동안에는 알림으로 진행을 알려 주고, 다 받으면 프로그램 창이 열립니다.</li>
+        <li>다음부터는 응용 프로그램 폴더의 <b>IncidentSim</b>으로 여세요.</li>
       </ol>
     </details>
     <details data-os="ubuntu">
-      <summary>Ubuntu 64비트</summary>
+      <summary>Ubuntu 22.04 이상 (64비트)</summary>
       <ol class="how">
         <li><code>IncidentSim-ubuntu.deb</code>를 내려받으세요.</li>
         <li>터미널에서 받은 폴더로 가세요. 한국어 환경은 <code>cd ~/다운로드</code>, 영어 환경은 <code>cd ~/Downloads</code>입니다.</li>
         <li><code>sudo apt install ./IncidentSim-ubuntu.deb</code>로 설치하세요.</li>
-        <li>앱 목록에서 <b>Deep Thought</b>를 여세요. 나머지 파일을 다 받으면 창이 열립니다.</li>
+        <li>앱 목록에서 <b>Deep Thought</b>를 여세요. 터미널에서는 <code>incident-sim</code>입니다.</li>
+        <li>내려받을 크기를 확인하고 <b>설치하고 시작</b>을 누르세요. 다 받으면 프로그램 창이 열립니다.</li>
       </ol>
     </details>
   </div>
+  <p class="measure">같은 프로그램이지만 자리마다 이름이 다릅니다. 시작 메뉴와 Ubuntu 앱 목록에서는 <b>Deep Thought</b>, Windows의 설치된 앱 목록에서는 <b>Deep Thought (IncidentSim)</b>, macOS 응용 프로그램 폴더에서는 <b>IncidentSim</b>입니다.</p>
   <p><a class="link" href="https://github.com/camelcaramel/incident-sim-tester#readme">설명서 전체 읽기</a></p>
 </section>
 
@@ -267,13 +276,19 @@
   <h2 id="h-faq" class="title">자주 묻는 것</h2>
   <div class="folds">
     <details><summary>AI를 정말 마음껏 써도 됩니까</summary><p>네. 도구도 횟수도 제한하지 않습니다. 다만 AI 도구에는 코드 폴더만 열어 주고, 나눈 대화는 지우지 말고 보고서에 붙이세요.</p></details>
-    <details><summary>Java를 설치해야 합니까</summary><p>아니요. 이 PC에 JDK 21이 없으면 프로그램이 자기 폴더 안에 내려받아 씁니다.</p></details>
+    <details><summary>Java를 설치해야 합니까</summary><p>아니요. 이 PC에 JDK 21이 없으면 프로그램이 자기 폴더 안에 내려받아 씁니다(약 205MB). 있으면 그것을 씁니다.</p></details>
     <details><summary>진짜 서버에 배포됩니까</summary><p>아니요. 운영 서버도, 그곳에 오는 요청도 모두 내 PC 안에서 돕니다.</p></details>
-    <details><summary>인터넷 없이 쓸 수 있습니까</summary><p>처음 켤 때, 문제의 첫 빌드 때, Discord로 질문할 때는 인터넷이 필요합니다. 필요한 파일을 모두 받은 뒤에는 인터넷이 없어도 켜집니다.</p></details>
+    <details><summary>인터넷 없이 쓸 수 있습니까</summary><p>처음 켤 때, 첫 문제를 준비할 때, Discord로 질문할 때는 인터넷이 필요합니다. 필요한 파일을 모두 받은 뒤에는 인터넷이 없어도 켜집니다. 받다가 끊기면 다시 켜세요. 받던 데서 이어서 받습니다.</p></details>
     <details><summary>질문에는 누가 답합니까</summary><p>선생님이 동료 역할로 Discord에서 답합니다. 프로그램은 질문을 복사하고 Discord를 열기만 합니다. 저절로 보내는 것은 없습니다.</p></details>
     <details><summary>운영 배포를 실수로 누르면 어떻게 됩니까</summary><p>영향 분석 메모를 쓰고 확인 칸을 채운 뒤 시작 버튼을 눌러야 배포가 시작됩니다. 그 전에는 취소할 수 있습니다. 시작하면 되돌릴 수 없습니다.</p></details>
     <details><summary>창이 열리지 않습니다</summary><p>브라우저에서 <code>http://127.0.0.1:17300/</code>을 여세요. 그래도 안 되면 프로그램 아이콘을 다시 누르세요. 진행 상황은 그대로 남아 있습니다.</p></details>
-    <details><summary>지우려면 어떻게 합니까</summary><p>먼저 프로그램 안의 “데이터 모두 지우기”로 기록과 코드 폴더를 지우고, 그다음 프로그램을 제거하세요. 운영 체제별 제거 방법은 <a href="https://github.com/camelcaramel/incident-sim-tester#readme">설명서</a>에 있습니다.</p></details>
+    <details><summary>지우려면 어떻게 합니까</summary><p>프로그램을 지워도 기록과 코드 폴더는 남습니다. 그것까지 지우려면 제출할 파일을 받아 둔 뒤 프로그램 안의 “데이터 모두 지우기”를 먼저 누르세요. 그다음 프로그램을 제거하세요.</p>
+      <dl class="remove">
+        <div><dt>Windows</dt><dd>설정 → 앱 → 설치된 앱에서 <b>Deep Thought (IncidentSim)</b>을 제거하세요.</dd></div>
+        <div><dt>macOS</dt><dd>터미널에서 <code>/Applications/IncidentSim.app/Contents/MacOS/IncidentSim <span class="keep">--uninstall</span></code>을 실행하고, 앱을 휴지통에 넣으세요.</dd></div>
+        <div><dt>Ubuntu</dt><dd>터미널에서 <code>incident-sim <span class="keep">--uninstall</span></code>을 실행하고, <code>sudo apt remove incident-sim</code>을 실행하세요.</dd></div>
+      </dl>
+    </details>
   </div>
 </section>
 
