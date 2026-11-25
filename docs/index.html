@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deep Thought · 생각해야 풀리는 실무 문제</title>
+<meta name="description" content="티켓을 받아 코드를 고치고, 운영에 배포하고, 그 결과에 대응합니다. 내 PC에서 하는 고등학생용 실무 문제 시뮬레이터 Deep Thought입니다.">
+<link rel="canonical" href="https://camelcaramel.github.io/incident-sim-tester/">
+<meta name="theme-color" content="#f4f4f1">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Deep Thought">
+<meta property="og:title" content="Deep Thought · 생각해야 풀리는 실무 문제">
+<meta property="og:description" content="티켓을 받아 코드를 고치고, 운영에 배포하고, 그 결과에 대응합니다. 내 PC에서 하는 고등학생용 실무 문제 시뮬레이터입니다.">
+<meta property="og:url" content="https://camelcaramel.github.io/incident-sim-tester/">
+<meta property="og:image" content="https://camelcaramel.github.io/incident-sim-tester/assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Deep Thought, 생각해야 풀리는 실무 문제">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header class="header" id="top">
+  <div class="header-main">
+    <a class="brand" href="#top"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 6 6"><rect class="m" x="0" y="0" width="2" height="2"/><rect class="m" x="2" y="2" width="2" height="2"/><rect class="m m3" x="4" y="4" width="2" height="2"/></svg>Deep Thought</a>
+    <span class="state"><i aria-hidden="true"></i><span id="state">운영 정상</span></span>
+  </div>
+  <nav class="nav" aria-label="이 페이지">
+    <a href="#flow">진행</a>
+    <a href="#download">내려받기</a>
+    <a href="#install">설치</a>
+    <a href="#faq">자주 묻는 것</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="split hero" aria-labelledby="h-hero">
+  <div class="col">
+    <h1 id="h-hero" class="hero-title">생각해야 풀리는 실무 문제</h1>
+    <p class="lead measure">Deep Thought는 고등학생용 실무 문제 시뮬레이터입니다. 티켓을 받아 코드를 고치고, 운영에 배포하고, 그 결과에 대응합니다. 모두 내&nbsp;PC에서 합니다.</p>
+    <div class="get" data-get>
+      <a class="primary" data-get-main href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-windows.exe"><span data-get-label>Windows용 내려받기</span><svg aria-hidden="true" width="16" height="28" viewBox="0 0 16 28" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 0v25M1 18l7 7 7-7"/></svg></a>
+      <p class="others">
+        <a class="link" data-get-other href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-macos.zip">macOS용</a>
+        <a class="link" data-get-other href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-ubuntu.deb">Ubuntu용</a>
+      </p>
+      <p class="say">설치판 1MB 이하 · 처음 켤 때 약 230MB를 내려받습니다</p>
+      <p class="note" data-release hidden></p>
+      <p class="say" data-mobile hidden>PC에서 쓰는 프로그램입니다. 이 주소를 PC에서 여세요.</p>
+    </div>
+  </div>
+  <div class="col side clock">
+    <p class="eyebrow">가상 시각</p>
+    <p class="xl" id="clock" aria-hidden="true">09:00</p>
+    <p class="sr">이 페이지를 연 때를 9시로 하고 실제 1초에 가상 5분씩 흐르는 시계입니다.</p>
+    <p class="cap" id="clock-cap">이 페이지를 연 때가 09:00 · 실제 1초가 5분</p>
+    <div class="bar" aria-hidden="true"><div id="clock-bar"></div></div>
+    <p class="say">운영 배포 한 번에 하루치 요청이 흐릅니다. 실제로는 약 5분입니다.</p>
+    <button class="link" type="button" id="clock-toggle" hidden>시계 멈추기</button>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-diff">
+  <h2 id="h-diff" class="title">AI를 마음껏 쓰세요. 판단은 직접 합니다.</h2>
+  <dl class="pairs">
+    <div><dt>AI에 제한이 없습니다</dt><dd>평소 쓰는 AI 코딩 도구를 그대로 쓰세요. 무엇을 시켰고 무엇을 받아들였는지는 보고서에 남깁니다.</dd></div>
+    <div><dt>정답보다 근거를 봅니다</dt><dd>맞혔는지보다 무엇을 보고 그렇게 판단했는지가 중요합니다. 근거는 로그, 동료의 답, 실행 결과입니다.</dd></div>
+    <div><dt>운영 배포는 되돌릴 수 없습니다</dt><dd>로컬 확인은 몇 번이든 할 수 있지만 운영 배포는 한 단계에 한&nbsp;번입니다. 언제 누를지 스스로 정합니다.</dd></div>
+    <div><dt>고치지 않고 답할 수 있습니다</dt><dd>모든 문제에 “수정하지 않고 답하기”가 있습니다. 고치지 않기로 했다면 그 이유를 요청자에게 적어 보냅니다.</dd></div>
+  </dl>
+</section>
+
+<section class="flow" id="flow" aria-labelledby="h-flow">
+  <div class="block flow-head">
+    <h2 id="h-flow" class="title">문제 하나는 이렇게 진행됩니다</h2>
+    <p class="lead measure">문제 하나에 수업 2시간 정도 걸립니다. 보고서는 3일 안에 냅니다.</p>
+  </div>
+  <ol class="steps" id="steps" aria-label="진행 단계">
+    <li class="now" aria-current="step"><b>01<span class="of"> / 05</span></b><span>티켓</span></li>
+    <li><b>02<span class="of"> / 05</span></b><span>수정 · 로컬 확인</span></li>
+    <li><b>03<span class="of"> / 05</span></b><span>운영 배포</span></li>
+    <li><b>04<span class="of"> / 05</span></b><span>결과에 대응</span></li>
+    <li><b>05<span class="of"> / 05</span></b><span>보고서</span></li>
+  </ol>
+
+  <article class="split step" data-step aria-labelledby="h-s1">
+    <div class="col">
+      <h3 id="h-s1" class="title">티켓을 읽습니다</h3>
+      <p class="lead measure">회사에서 일을 받듯 티켓을 받습니다. 누가 무엇을 왜 바라는지 읽고, 무엇을 확인할지 정하세요.</p>
+    </div>
+    <figure class="col side">
+      <figcaption class="eyebrow">예시 화면</figcaption>
+      <div role="img" aria-label="티켓 예시. 도서 목록을 제목순으로 정렬해 달라는 요청입니다." class="stack">
+        <p class="cap">예시-1 · 도서관 업무팀 · 09:12</p>
+        <p class="subhead">도서 목록 제목순 정렬</p>
+        <ul class="kv">
+          <li><span>요청자</span><b>도서관 업무팀</b></li>
+          <li><span>우선순위</span><b>보통</b></li>
+        </ul>
+      </div>
+    </figure>
+  </article>
+
+  <article class="split step" data-step aria-labelledby="h-s2">
+    <div class="col">
+      <h3 id="h-s2" class="title">고치고 로컬에서 확인합니다</h3>
+      <p class="lead measure">평소 쓰는 편집기와 AI 도구로 코드 폴더를 고칩니다. 로컬 확인은 약&nbsp;1분 걸리고 횟수 제한이 없습니다.</p>
+    </div>
+    <figure class="col side">
+      <figcaption class="eyebrow">예시 화면</figcaption>
+      <div role="img" aria-label="로컬 확인 예시. 요청 120건이 모두 통과했고, 아래에 코드 폴더 경로가 있습니다." class="stack">
+        <p class="status"><span class="word"><i></i>통과</span><span class="cap">09:41 · 요청 120 · 실패 0</span></p>
+        <p class="eyebrow gap">코드 폴더</p>
+        <p class="path">C:\Users\student\sample</p>
+        <p class="acts"><span class="secondary">폴더 열기</span><span class="fake-link">경로 복사</span></p>
+      </div>
+    </figure>
+  </article>
+
+  <article class="split step" data-step aria-labelledby="h-s3">
+    <div class="col">
+      <h3 id="h-s3" class="title">운영에 배포합니다</h3>
+      <p class="lead measure">누구에게 어떤 영향을 줄지 먼저 적고 시작합니다. 하루치 요청이 약&nbsp;5분 동안 흐릅니다. 빌드가 실패하면 횟수는 줄지 않습니다.</p>
+    </div>
+    <figure class="col side">
+      <figcaption class="eyebrow">남은 운영 배포</figcaption>
+      <p class="xl">1</p>
+      <p class="say">단계마다 한 번 · 시작하면 되돌릴 수 없습니다</p>
+    </figure>
+  </article>
+
+  <article class="split step incident" data-step data-theme="incident" aria-labelledby="h-s4">
+    <div class="col">
+      <h3 id="h-s4" class="headline">장애가 나면 화면이 뒤집힙니다</h3>
+      <p class="lead measure">화면 색이 운영 상태입니다. 문제가 없으면 밝은 화면 그대로이고, 장애가 나면 화면 전체가 검어집니다. 알림에는 겉으로 드러난 증상만 있습니다. 원인은 직접 찾습니다.</p>
+      <dl class="pairs tight">
+        <div><dt>로그</dt><dd>운영 로그를 검색하고 필요한 줄을 CSV로 내려받습니다.</dd></div>
+        <div><dt>질문</dt><dd>동료에게 Discord로 묻습니다. 선생님이 동료 역할로 답합니다.</dd></div>
+        <div><dt>복구 배포</dt><dd>고친 코드를 한 번 더 운영에 배포합니다. 이것도 한&nbsp;번입니다.</dd></div>
+      </dl>
+    </div>
+    <figure class="col side">
+      <figcaption class="eyebrow">예시 화면 · 실패한 요청</figcaption>
+      <p class="xl bad">128</p>
+      <p class="cap">전체 2,400건 · 성공률 94.7%</p>
+    </figure>
+  </article>
+
+  <article class="split step" data-step aria-labelledby="h-s5">
+    <div class="col">
+      <h3 id="h-s5" class="title">보고서를 씁니다</h3>
+      <p class="lead measure">프로그램이 적은 기록을 내려받아 보고서를 씁니다. 장애를 냈더라도 과정을 솔직하고 구체적으로 돌아보면 좋은 보고서입니다.</p>
+      <p><a class="link" href="https://github.com/camelcaramel/incident-sim-tester/blob/main/docs/report-template.md">보고서 양식 보기</a></p>
+    </div>
+    <figure class="col side">
+      <figcaption class="eyebrow">예시 화면 · 기록</figcaption>
+      <div role="img" aria-label="기록 예시. 티켓을 받은 때부터 과정 기록을 내보낸 때까지 시간순으로 적혀 있습니다.">
+        <ol class="rec">
+          <li><span class="meta">09:12</span><span>티켓 예시-1 받음</span></li>
+          <li><span class="meta">09:41</span><span>로컬 확인 통과 · 120건 모두 성공</span></li>
+          <li><span class="meta">10:05</span><span>운영 배포 시작</span></li>
+          <li class="bad"><span class="meta">10:10</span><span>운영 장애 · 실패한 요청 128건</span></li>
+          <li><span class="meta">10:48</span><span>복구 배포 통과</span></li>
+          <li class="last"><span class="meta">11:02</span><span>과정 기록 내보냄</span></li>
+        </ol>
+      </div>
+    </figure>
+  </article>
+</section>
+
+<section class="split" id="download" aria-labelledby="h-download">
+  <div class="col">
+    <h2 id="h-download" class="title">내려받기</h2>
+    <p class="lead measure">작은 설치판을 받아 실행하면 나머지를 스스로 내려받습니다. Java는 따로 설치하지 않아도 됩니다.</p>
+    <div class="get" data-get>
+      <a class="primary" data-get-main href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-windows.exe"><span data-get-label>Windows용 내려받기</span><svg aria-hidden="true" width="16" height="28" viewBox="0 0 16 28" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 0v25M1 18l7 7 7-7"/></svg></a>
+      <p class="note" data-release hidden></p>
+      <p class="say" data-mobile hidden>PC에서 쓰는 프로그램입니다. 이 주소를 PC에서 여세요.</p>
+    </div>
+    <ul class="files">
+      <li data-asset="IncidentSim-windows.exe">
+        <span class="os">Windows 10 · 11</span>
+        <a class="link path" href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-windows.exe">IncidentSim-windows.exe</a>
+        <span class="cap" data-size hidden></span>
+        <span class="sha" data-sha hidden></span>
+      </li>
+      <li data-asset="IncidentSim-macos.zip">
+        <span class="os">macOS · Apple Silicon, Intel</span>
+        <a class="link path" href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-macos.zip">IncidentSim-macos.zip</a>
+        <span class="cap" data-size hidden></span>
+        <span class="sha" data-sha hidden></span>
+      </li>
+      <li data-asset="IncidentSim-ubuntu.deb">
+        <span class="os">Ubuntu 64비트</span>
+        <a class="link path" href="https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-ubuntu.deb">IncidentSim-ubuntu.deb</a>
+        <span class="cap" data-size hidden></span>
+        <span class="sha" data-sha hidden></span>
+      </li>
+    </ul>
+  </div>
+  <div class="col side">
+    <p class="eyebrow">처음 켤 때 내려받는 양 (약)</p>
+    <p class="xl">230<span class="unit">MB</span></p>
+    <p class="say">이 PC에 JDK 21이 있으면 더 적습니다. 두 번째부터는 바뀐 것만 받습니다.</p>
+    <p class="eyebrow gap">준비물</p>
+    <ul class="kv">
+      <li><span>운영 체제</span><b>Windows 10·11, macOS, Ubuntu(64비트)</b></li>
+      <li><span>메모리</span><b>8GB 이상, 16GB 권장</b></li>
+      <li><span>디스크</span><b>남은 공간 2GB 이상</b></li>
+      <li><span>인터넷</span><b>처음 켤 때, 첫 빌드, 질문할 때</b></li>
+      <li><span>코드 편집기</span><b>평소 쓰는 것</b></li>
+      <li><span>AI 코딩 도구</span><b>평소 쓰는 것, 제한 없음</b></li>
+      <li><span>Discord</span><b>동료에게 질문할 때</b></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="install" aria-labelledby="h-install">
+  <h2 id="h-install" class="title">설치</h2>
+  <p class="lead measure">서명하지 않은 실험용 프로그램이라 처음 열 때 보안 경고가 나옵니다. 아래 순서대로 여세요.</p>
+  <div class="folds">
+    <details data-os="windows" open>
+      <summary>Windows 10 · 11</summary>
+      <ol class="how">
+        <li><code>IncidentSim-windows.exe</code>를 내려받으세요. 브라우저가 막으면 내려받기 목록에서 <b>유지</b>를 고르세요.</li>
+        <li>받은 파일을 두 번 눌러 실행하세요.</li>
+        <li>“Windows의 PC 보호” 창이 나오면 <b>추가 정보</b>를 누르고 <b>실행</b>을 누르세요.</li>
+        <li>설치가 끝나면 나머지 파일을 내려받습니다. 다 받으면 프로그램 창이 열립니다.</li>
+        <li>다음부터는 시작 메뉴의 바로 가기로 여세요.</li>
+      </ol>
+    </details>
+    <details data-os="macos">
+      <summary>macOS</summary>
+      <ol class="how">
+        <li><code>IncidentSim-macos.zip</code>을 내려받아 압축을 푸세요. Safari는 저절로 풉니다.</li>
+        <li><code>IncidentSim</code> 앱을 <b>응용 프로그램</b> 폴더로 옮기고 두 번 눌러 여세요.</li>
+        <li>열 수 없다는 경고가 나오면 <b>완료</b>를 누르세요. 휴지통으로 옮기지 마세요.</li>
+        <li><b>시스템 설정 → 개인정보 보호 및 보안</b>을 열고 아래쪽에서 <b>그래도 열기</b>를 누르세요. 다시 묻는 창에서도 여세요.</li>
+        <li>나머지 파일을 다 받으면 프로그램 창이 열립니다. 다음부터는 경고 없이 열립니다.</li>
+      </ol>
+    </details>
+    <details data-os="ubuntu">
+      <summary>Ubuntu 64비트</summary>
+      <ol class="how">
+        <li><code>IncidentSim-ubuntu.deb</code>를 내려받으세요.</li>
+        <li>터미널에서 받은 폴더로 가세요. 한국어 환경은 <code>cd ~/다운로드</code>, 영어 환경은 <code>cd ~/Downloads</code>입니다.</li>
+        <li><code>sudo apt install ./IncidentSim-ubuntu.deb</code>로 설치하세요.</li>
+        <li>앱 목록에서 <b>Deep Thought</b>를 여세요. 나머지 파일을 다 받으면 창이 열립니다.</li>
+      </ol>
+    </details>
+  </div>
+  <p><a class="link" href="https://github.com/camelcaramel/incident-sim-tester#readme">설명서 전체 읽기</a></p>
+</section>
+
+<section class="block" id="faq" aria-labelledby="h-faq">
+  <h2 id="h-faq" class="title">자주 묻는 것</h2>
+  <div class="folds">
+    <details><summary>AI를 정말 마음껏 써도 됩니까</summary><p>네. 도구도 횟수도 제한하지 않습니다. 다만 AI 도구에는 코드 폴더만 열어 주고, 나눈 대화는 지우지 말고 보고서에 붙이세요.</p></details>
+    <details><summary>Java를 설치해야 합니까</summary><p>아니요. 이 PC에 JDK 21이 없으면 프로그램이 자기 폴더 안에 내려받아 씁니다.</p></details>
+    <details><summary>진짜 서버에 배포됩니까</summary><p>아니요. 운영 서버도, 그곳에 오는 요청도 모두 내 PC 안에서 돕니다.</p></details>
+    <details><summary>인터넷 없이 쓸 수 있습니까</summary><p>처음 켤 때, 문제의 첫 빌드 때, Discord로 질문할 때는 인터넷이 필요합니다. 필요한 파일을 모두 받은 뒤에는 인터넷이 없어도 켜집니다.</p></details>
+    <details><summary>질문에는 누가 답합니까</summary><p>선생님이 동료 역할로 Discord에서 답합니다. 프로그램은 질문을 복사하고 Discord를 열기만 합니다. 저절로 보내는 것은 없습니다.</p></details>
+    <details><summary>운영 배포를 실수로 누르면 어떻게 됩니까</summary><p>영향 분석 메모를 쓰고 확인 칸을 채운 뒤 시작 버튼을 눌러야 배포가 시작됩니다. 그 전에는 취소할 수 있습니다. 시작하면 되돌릴 수 없습니다.</p></details>
+    <details><summary>창이 열리지 않습니다</summary><p>브라우저에서 <code>http://127.0.0.1:17300/</code>을 여세요. 그래도 안 되면 프로그램 아이콘을 다시 누르세요. 진행 상황은 그대로 남아 있습니다.</p></details>
+    <details><summary>지우려면 어떻게 합니까</summary><p>먼저 프로그램 안의 “데이터 모두 지우기”로 기록과 코드 폴더를 지우고, 그다음 프로그램을 제거하세요. 운영 체제별 제거 방법은 <a href="https://github.com/camelcaramel/incident-sim-tester#readme">설명서</a>에 있습니다.</p></details>
+  </div>
+</section>
+
+<section class="split" id="promise" aria-labelledby="h-promise">
+  <div class="col">
+    <h2 id="h-promise" class="title">테스터 약속</h2>
+    <ul class="promise">
+      <li>AI 도구에는 코드 폴더만 열어 줍니다.</li>
+      <li>프로그램을 뜯어보거나, 기록을 지우고 운영 배포를 다시 하지 않습니다.</li>
+      <li>실험이 끝날 때까지 다른 테스터에게 답이나 단서를 알려 주지 않습니다.</li>
+      <li>AI와 나눈 대화는 지우지 않고 보고서에 붙입니다.</li>
+    </ul>
+    <p class="measure">약속을 어긴 것을 솔직하게 적어 내는 것은 감점하지 않습니다.</p>
+  </div>
+  <div class="col side" id="contact">
+    <p class="eyebrow">문의 · Discord 사용자명</p>
+    <p class="name">donghwik</p>
+    <p class="say">설치나 사용 중에 막히면 이 이름으로 메시지를 보내세요.</p>
+    <p class="eyebrow gap">문서</p>
+    <ul class="docs">
+      <li><a href="https://github.com/camelcaramel/incident-sim-tester#readme">테스터 설명서</a></li>
+      <li><a href="https://github.com/camelcaramel/incident-sim-tester/blob/main/docs/report-template.md">보고서 양식</a></li>
+      <li><a href="https://github.com/camelcaramel/incident-sim-tester/releases/latest">최신 릴리스</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <span class="brand"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 6 6"><rect class="m" x="0" y="0" width="2" height="2"/><rect class="m" x="2" y="2" width="2" height="2"/><rect class="m m3" x="4" y="4" width="2" height="2"/></svg>Deep Thought</span>
+  <span>생각해야 풀리는 실무 문제</span>
+  <a href="https://github.com/camelcaramel/incident-sim-tester">GitHub 저장소</a>
+</footer>
+</body>
+</html>
