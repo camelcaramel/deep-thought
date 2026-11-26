@@ -2,12 +2,12 @@
 (function () {
   'use strict';
 
-  var REPO = 'camelcaramel/incident-sim-tester';
+  var REPO = 'camelcaramel/deep-thought';
   var BASE = 'https://github.com/' + REPO + '/releases/latest/download/';
   var FILES = {
-    windows: { name: 'Windows', file: 'IncidentSim-windows.exe', size: '151KB' },
-    macos: { name: 'macOS', file: 'IncidentSim-macos.zip', size: '13KB' },
-    ubuntu: { name: 'Ubuntu', file: 'IncidentSim-ubuntu.deb', size: '13KB' }
+    windows: { name: 'Windows', file: 'DeepThought-windows.exe', size: '151KB' },
+    macos: { name: 'macOS', file: 'DeepThought-macos.zip', size: '13KB' },
+    ubuntu: { name: 'Ubuntu', file: 'DeepThought-ubuntu.deb', size: '13KB' }
   };
   var $ = function (s, root) { return (root || document).querySelector(s); };
   var $$ = function (s, root) { return Array.prototype.slice.call((root || document).querySelectorAll(s)); };
@@ -103,37 +103,89 @@
   }
   loadRelease();
 
-  /* 가상 시각: 실제 1초가 5분. 하루가 지나면 멈춘다 */
-  var clock = $('#clock'), bar = $('#clock-bar'), cap = $('#clock-cap'), toggle = $('#clock-toggle');
-  var START = 9 * 60, DAY = 24 * 60, passed = 0, timer = null;
-  function draw() {
-    var t = (START + passed) % DAY;
-    clock.textContent = String(Math.floor(t / 60)).padStart(2, '0') + ':' + String(t % 60).padStart(2, '0');
-    bar.style.width = (passed / DAY * 100) + '%';
-  }
-  function stop() { clearInterval(timer); timer = null; toggle.textContent = '시계 이어 가기'; }
-  function go() {
-    toggle.textContent = '시계 멈추기';
-    timer = setInterval(function () {
-      if (document.hidden) return;
-      passed = Math.min(DAY, passed + 5);
-      draw();
-      if (passed === DAY) {
-        stop();
-        toggle.hidden = true;
-        cap.textContent = '하루가 지났습니다 · 실제로는 4분 48초';
-      }
-    }, 1000);
-  }
-  toggle.hidden = false;
-  toggle.addEventListener('click', function () { if (timer) stop(); else go(); });
-  if (calm) stop(); else go();
+  /* 실제 화면: 5초마다 다음 화면으로 넘긴다. 마우스를 올리거나 키보드 초점이 들어오면 멈춘다.
+     움직임 줄이기를 켠 사람에게는 저절로 넘기지 않고, 옮길 때도 미끄러지지 않는다.
+     스크립트가 없으면 가로로 밀어 보는 목록으로 남는다 */
+  var shots = $('[data-shots]');
+  if (shots) (function () {
+    var track = $('[data-shots-track]', shots), slides = $$('.shot', shots);
+    var dotsBox = $('[data-shots-dots]', shots), count = $('[data-shots-count]', shots), play = $('[data-shots-play]', shots);
+    var WAIT = 5000, at = 0, timer = null, stopped = calm, hover = false, focused = false, settle = null;
+    var dots = slides.map(function (li, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'shots-dot';
+      b.setAttribute('aria-label', (i + 1) + '번째 화면');
+      b.addEventListener('click', function () { go(i); });
+      dotsBox.appendChild(b);
+      return b;
+    });
+    function mark(i) {
+      at = i;
+      dots.forEach(function (b, k) { if (k === i) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+      slides.forEach(function (li, k) { if (k === i) li.removeAttribute('aria-hidden'); else li.setAttribute('aria-hidden', 'true'); });
+      count.textContent = (i + 1) + ' / ' + slides.length;
+    }
+    function x(i) { return slides[i].offsetLeft - slides[0].offsetLeft; }
+    function go(i) {
+      i = (i + slides.length) % slides.length;
+      track.scrollTo({ left: x(i), behavior: calm ? 'auto' : 'smooth' });
+      mark(i);
+      run();
+    }
+    function run() {
+      clearInterval(timer);
+      timer = null;
+      var moving = !stopped && !hover && !focused;
+      if (moving) timer = setInterval(function () { if (!document.hidden) go(at + 1); }, WAIT);
+      track.setAttribute('aria-live', moving ? 'off' : 'polite');
+    }
+    /* 손가락이나 트랙패드로 밀었을 때 */
+    track.addEventListener('scroll', function () {
+      clearTimeout(settle);
+      settle = setTimeout(function () {
+        var i = Math.round(track.scrollLeft / track.clientWidth);
+        if (i !== at && slides[i]) { mark(i); run(); }
+      }, 150);
+    }, { passive: true });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(at + 1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); go(at - 1); }
+    });
+    $('[data-shots-prev]', shots).addEventListener('click', function () { go(at - 1); });
+    $('[data-shots-next]', shots).addEventListener('click', function () { go(at + 1); });
+    play.addEventListener('click', function () {
+      stopped = !stopped;
+      play.textContent = stopped ? '자동으로 넘기기' : '멈추기';
+      run();
+    });
+    shots.addEventListener('mouseenter', function () { hover = true; run(); });
+    shots.addEventListener('mouseleave', function () { hover = false; run(); });
+    /* 마우스로 누른 단추에 남은 초점 때문에 계속 멈춰 있지 않도록 키보드 초점만 본다 */
+    shots.addEventListener('focusin', function (e) {
+      var keyboard = true;
+      try { keyboard = e.target.matches(':focus-visible'); } catch (x) { /* :focus-visible 을 모르는 브라우저 */ }
+      if (keyboard) { focused = true; run(); }
+    });
+    shots.addEventListener('focusout', function (e) {
+      if (!shots.contains(e.relatedTarget)) { focused = false; run(); }
+    });
+    window.addEventListener('resize', function () { track.scrollTo({ left: x(at), behavior: 'auto' }); });
+    /* 첫 화면이 뜬 뒤에는 나머지 화면도 미리 받아 둔다 */
+    window.addEventListener('load', function () { $$('img[loading="lazy"]', track).forEach(function (img) { img.loading = 'eager'; }); });
 
-  /* 진행: 지금 단계를 채우고, 장애 구간이 화면 가운데를 지나는 동안 화면을 뒤집는다.
+    shots.classList.add('live');
+    $('[data-shots-ctl]', shots).hidden = false;
+    if (calm) play.hidden = true;
+    mark(0);
+    run();
+  })();
+
+  /* 진행: 지금 단계를 채우고, 장애 구간이 화면 가운데를 지나는 동안 화면을 장애 색으로 바꾼다.
      움직임 줄이기를 켠 사람에게는 머리줄과 단계 줄만 바꾼다 */
   var root = document.documentElement, header = $('.header'), stepBar = $('#steps');
   var bars = $$('#steps li'), steps = $$('[data-step]'), incident = $('.incident');
-  var state = $('#state'), color = $('meta[name="theme-color"]');
+  var color = $('meta[name="theme-color"]');
   var links = $$('.nav a'), targets = links.map(function (a) { return $(a.getAttribute('href')); });
   var shown = -1, dark = false, ticking = false;
   stepBar.classList.add('live');
@@ -141,7 +193,6 @@
   function flip(on) {
     if (on === dark) return;
     dark = on;
-    state.textContent = on ? '운영 장애' : '운영 정상';
     (calm ? [header, stepBar] : [root]).forEach(function (el) {
       if (on) el.setAttribute('data-theme', 'incident'); else el.removeAttribute('data-theme');
     });
