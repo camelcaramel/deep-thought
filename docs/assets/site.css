@@ -30,7 +30,7 @@ p, dd, li { text-wrap: pretty; }
 /* 머리줄 */
 .header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 0 var(--space-8); min-height: var(--header-height); padding: 0 var(--pad); background: var(--ground); color: var(--ink); border-bottom: var(--rule-strong) solid var(--ink); }
 .header-main { display: flex; align-items: center; gap: var(--space-5); }
-.brand { display: inline-flex; align-items: baseline; gap: 10px; min-height: var(--target-min); font-size: 18px; font-weight: 900; letter-spacing: -0.03em; text-decoration: none; white-space: nowrap; }
+.brand { display: inline-grid; grid-auto-flow: column; align-items: baseline; align-content: center; column-gap: 10px; min-height: var(--target-min); font-size: 18px; font-weight: 900; letter-spacing: -0.03em; text-decoration: none; white-space: nowrap; } /* 로고와 글자는 바닥선에 맞추고, 그 묶음은 칸 가운데에 둔다 */
 .brand svg { width: 0.76em; height: 0.76em; flex: none; } /* 로고를 대문자 높이에 맞춰 글자 바닥선에 붙인다 */
 .m { fill: var(--ink); }
 .nav { display: flex; gap: 0 28px; }
