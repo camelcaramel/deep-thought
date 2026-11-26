@@ -32,15 +32,11 @@ p, dd, li { text-wrap: pretty; }
 .header-main { display: flex; align-items: center; gap: var(--space-5); }
 .brand { display: inline-flex; align-items: center; gap: 10px; min-height: var(--target-min); font-size: 18px; font-weight: 900; letter-spacing: -0.03em; text-decoration: none; white-space: nowrap; }
 .m { fill: var(--ink); }
-.state { display: inline-flex; align-items: center; gap: var(--space-2); font-size: 15px; white-space: nowrap; }
-.state i { width: 10px; height: 10px; background: var(--ink); }
 .nav { display: flex; gap: 0 28px; }
 .nav a { display: inline-flex; align-items: center; min-height: calc(var(--header-height) - var(--rule-strong)); padding-top: var(--space-1); border-bottom: var(--space-1) solid transparent; font-size: 16px; font-weight: 500; text-decoration: none; }
 .nav a:hover { border-bottom-color: var(--hairline); }
 .nav a[aria-current] { font-weight: 900; border-bottom-color: var(--ink); }
 [data-theme='incident'] .header, .header[data-theme='incident'] { border-bottom-color: var(--signal); }
-[data-theme='incident'] .state { color: var(--signal); font-weight: 700; }
-[data-theme='incident'] .state i { background: var(--signal); }
 [data-theme='incident'] .m3 { fill: var(--signal); }
 
 /* 본문 뼈대: 왼쪽 할 일, 오른쪽 옆 칸. 사이는 1px 선 */
@@ -55,7 +51,7 @@ section, .step { border-bottom: var(--rule-thin) solid var(--rule); }
 /* 첫 화면 */
 .hero { min-height: min(calc(100svh - var(--header-height)), 900px); }
 .hero > .col { padding-bottom: var(--space-16); }
-.hero > .clock { justify-content: flex-end; }
+.hero > .side { justify-content: flex-end; }
 .hero-title { max-width: 7.2em; font-size: clamp(40px, 6.7vw, 96px); line-height: 1.08; font-weight: 900; letter-spacing: -0.05em; }
 .hero > .col > .lead { margin-top: auto; }
 .get { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-8); }
@@ -72,8 +68,23 @@ section, .step { border-bottom: var(--rule-thin) solid var(--rule); }
 .xl { margin-left: -0.04em; font-family: var(--font-mono); font-size: clamp(96px, 13.4vw, 200px); line-height: 0.95; font-weight: 500; letter-spacing: -0.07em; white-space: nowrap; }
 .xl.bad { color: var(--signal); }
 .unit { margin-left: 0.2em; font-size: 0.28em; letter-spacing: -0.02em; }
-.bar { height: 16px; background: var(--track); }
-.bar div { width: 0; height: 16px; background: var(--ink); }
+
+/* 실제 화면. 스크립트가 없으면 가로로 밀어 보는 목록 */
+.shots-count { margin-left: var(--space-2); }
+.shots-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; }
+.shots.live .shots-track { scrollbar-width: none; }
+.shots.live .shots-track::-webkit-scrollbar { display: none; }
+.shots-track:focus-visible { outline-offset: 4px; }
+.shot { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; }
+.shot img { display: block; width: 100%; height: auto; border: var(--rule-thin) solid var(--rule); background: var(--field); }
+.shot figcaption { padding-top: var(--space-3); font-size: 17px; font-weight: 700; color: var(--ink); }
+.shots-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.shots-btn { display: inline-flex; align-items: center; justify-content: center; width: var(--target-min); height: var(--target-min); padding: 0; border: var(--rule-strong) solid var(--ink); background: none; color: var(--ink); cursor: pointer; }
+.shots-dots { display: flex; }
+.shots-dot { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: var(--target-min); padding: 0; border: 0; background: none; cursor: pointer; }
+.shots-dot::before { content: ''; width: 10px; height: 10px; border: var(--rule-strong) solid var(--ink); }
+.shots-dot[aria-current]::before { background: var(--ink); }
+.shots-play { margin-left: auto; }
 
 /* 이름과 설명이 짝을 이루는 줄. 설명은 옆 칸 선에 맞춘다 */
 .pairs { align-self: stretch; margin-top: var(--space-8); border-bottom: var(--rule-thin) solid var(--rule); }
