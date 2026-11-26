@@ -2,18 +2,18 @@
 
 **생각해야 풀리는 실무 문제**
 
-회사에서 일하는 것처럼 **티켓을 받아 코드를 고치고, 운영에 배포하고, 그 결과에 대응하는 과정**을 내 PC에서 해 보는 고등학생용 실무 문제 시뮬레이터입니다.
+회사에서 일하는 것처럼 **티켓을 받아 코드를 고치고, 운영에 배포하고, 그 결과에 대응하는 과정**을 내 PC에서 해 보는 실무 문제 시뮬레이터입니다.
 평소 쓰는 AI 코딩 도구를 마음껏 써도 됩니다. 정답을 맞혔는지보다 **어떤 근거로 무엇을 판단했는지**를 봅니다.
 
 이 문서는 **테스터(학생)용 사용 설명서**입니다. 처음부터 순서대로 따라 하면 됩니다.
 
-> **사이트**: https://camelcaramel.github.io/incident-sim-tester/ · **내려받기**: [최신 릴리스](https://github.com/camelcaramel/incident-sim-tester/releases/latest) · **보고서 양식**: [docs/report-template.md](docs/report-template.md)
+> **사이트**: https://camelcaramel.github.io/deep-thought/ · **내려받기**: [최신 릴리스](https://github.com/camelcaramel/deep-thought/releases/latest) · **보고서 양식**: [docs/report-template.md](docs/report-template.md)
 >
 > **문의**: Discord 사용자명 `donghwik`
 
-문제는 네 가지입니다. 한 줄짜리 수정부터 Java 파일이 1,000개가 넘는 서비스까지 있습니다. AI에게 통째로 맡기면 풀리지 않게 만들었습니다. 로그를 읽고 동료에게 물어야 풀립니다.
+문제는 한 줄짜리 수정부터 Java 파일이 1,000개가 넘는 서비스 수정까지 있습니다.
 
-같은 프로그램이지만 자리마다 이름이 다릅니다. 시작 메뉴와 Ubuntu 앱 목록에서는 **Deep Thought**, Windows의 설치된 앱 목록에서는 **Deep Thought (IncidentSim)**, 설치 파일과 macOS 응용 프로그램 폴더에서는 **IncidentSim**입니다.
+어디서 찾든 이름은 **Deep Thought**입니다. 시작 메뉴, Windows의 설치된 앱 목록, macOS 응용 프로그램 폴더, Ubuntu 앱 목록 모두 같습니다.
 
 ---
 
@@ -66,7 +66,7 @@
 | 티켓 | 내가 받은 일 |
 | 코드 폴더 | 내가 고치는 코드가 있는 폴더 |
 | 로컬 확인 | 고친 코드를 내 PC에서 띄워 보는 확인. 횟수 제한 없음 |
-| 운영 배포 | 하루치 요청을 모두 흘려 보내는 배포. 단계마다 한 번 |
+| 운영 배포 | 하루치 요청을 모두 보내 보는 배포. 단계마다 한 번 |
 | 복구 배포 | 장애가 난 뒤의 운영 배포 |
 | 질문 | Discord로 동료에게 묻는 것. 선생님이 동료 역할로 답합니다 |
 | 기록 | 프로그램이 자동으로 적는, 내가 한 일 |
@@ -93,13 +93,13 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 
 ### 받을 파일
 
-**설치 파일은 151KB**(macOS와 Ubuntu는 13KB)이고, 나머지는 필요할 때 스스로 받습니다.
+**설치 파일은 151KB**(macOS와 Ubuntu는 13KB)이고, 나머지는 프로그램이 필요할 때 알아서 받습니다.
 
 | PC | 받을 파일 | 크기 |
 | --- | --- | --- |
-| Windows 10·11 (64비트) | [`IncidentSim-windows.exe`](https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-windows.exe) | 151KB |
-| macOS 11 이상 (Apple Silicon·Intel) | [`IncidentSim-macos.zip`](https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-macos.zip) | 13KB |
-| Ubuntu 22.04 이상 (64비트) | [`IncidentSim-ubuntu.deb`](https://github.com/camelcaramel/incident-sim-tester/releases/latest/download/IncidentSim-ubuntu.deb) | 13KB |
+| Windows 10·11 (64비트) | [`DeepThought-windows.exe`](https://github.com/camelcaramel/deep-thought/releases/latest/download/DeepThought-windows.exe) | 151KB |
+| macOS 11 이상 (Apple Silicon·Intel) | [`DeepThought-macos.zip`](https://github.com/camelcaramel/deep-thought/releases/latest/download/DeepThought-macos.zip) | 13KB |
+| Ubuntu 22.04 이상 (64비트) | [`DeepThought-ubuntu.deb`](https://github.com/camelcaramel/deep-thought/releases/latest/download/DeepThought-ubuntu.deb) | 13KB |
 
 나머지를 받는 때와 양은 이렇습니다. 한 번 받으면 그다음부터는 바뀐 것만 받습니다.
 
@@ -109,13 +109,13 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 | 처음 켤 때, PC에 JDK 21이 없으면 | Java 실행 환경 | 약 200MB |
 | 첫 문제를 준비할 때 | 빌드 도구(Gradle)와 라이브러리 | 약 210MB |
 
-링크는 늘 최신판입니다. 받은 파일이 손상되지 않았는지 확인하려면 [릴리스 페이지](https://github.com/camelcaramel/incident-sim-tester/releases/latest)에 적힌 SHA-256 값과 비교하세요.
+링크는 늘 최신판입니다. 받은 파일이 손상되지 않았는지 확인하려면 [릴리스 페이지](https://github.com/camelcaramel/deep-thought/releases/latest)에 적힌 SHA-256 값과 비교하세요.
 
 코드 서명이 없는 실험용 프로그램이라 처음 열 때 Windows SmartScreen이나 macOS Gatekeeper의 경고가 뜰 수 있습니다. 아래 순서대로 여세요.
 
 ### Windows
 
-1. `IncidentSim-windows.exe`를 내려받으세요. 브라우저가 막으면 내려받기 목록에서 **유지**를 고르세요.
+1. `DeepThought-windows.exe`를 내려받으세요. 브라우저가 막으면 내려받기 목록에서 **유지**를 고르세요.
 2. 받은 파일을 두 번 눌러 실행하세요.
 3. "Windows의 PC 보호" 창이 나오면 **추가 정보 → 실행**을 누르세요.
 4. 내려받을 크기를 확인하고 **설치하고 시작**을 누르세요. 사용자 폴더에 설치하므로 관리자 권한은 필요하지 않습니다. 다 받으면 창이 열립니다.
@@ -123,19 +123,19 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 
 ### macOS
 
-1. `IncidentSim-macos.zip`을 내려받아 압축을 푸세요. Safari는 저절로 풉니다.
-2. `IncidentSim` 앱을 **응용 프로그램** 폴더로 옮기고 두 번 눌러 여세요.
+1. `DeepThought-macos.zip`을 내려받아 압축을 푸세요. Safari로 받으면 저절로 풀립니다.
+2. **Deep Thought** 앱을 **응용 프로그램** 폴더로 옮기고 두 번 눌러 여세요.
 3. 열 수 없다는 경고가 나오면 **완료**(또는 **취소**)를 누르세요. 휴지통으로 옮기지 마세요.
-4. **시스템 설정 → 개인정보 보호 및 보안**을 열고 아래쪽 IncidentSim 옆의 **그래도 열기**를 누르세요. 다시 묻는 창에서도 여세요. macOS 14 이하는 앱을 **오른쪽 클릭 → 열기 → 열기**로도 됩니다.
+4. **시스템 설정 → 개인정보 보호 및 보안**을 열고 아래쪽 Deep Thought 옆의 **그래도 열기**를 누르세요. 다시 묻는 창에서도 여세요. macOS 14 이하는 앱을 **오른쪽 클릭 → 열기 → 열기**로도 됩니다.
 5. 내려받을 크기를 확인하고 **설치하고 시작**을 누르세요. 받는 동안에는 알림으로 진행을 알려 주고, 다 받으면 창이 열립니다.
-6. 다음부터는 응용 프로그램 폴더의 **IncidentSim**으로 여세요.
+6. 다음부터는 응용 프로그램 폴더의 **Deep Thought**로 여세요.
 
 ### Ubuntu
 
-1. `IncidentSim-ubuntu.deb`를 내려받으세요.
+1. `DeepThought-ubuntu.deb`를 내려받으세요.
 2. 터미널에서 받은 폴더로 가세요: `cd ~/다운로드` (영어 환경은 `cd ~/Downloads`)
-3. 설치하세요: `sudo apt install ./IncidentSim-ubuntu.deb`
-4. 앱 목록에서 **Deep Thought**를 여세요. 터미널에서는 `incident-sim`입니다.
+3. 설치하세요: `sudo apt install ./DeepThought-ubuntu.deb`
+4. 앱 목록에서 **Deep Thought**를 여세요. 터미널에서는 `deep-thought`입니다.
 5. 내려받을 크기를 확인하고 **설치하고 시작**을 누르세요. 다 받으면 창이 열립니다.
 
 ### 켜지면
@@ -146,9 +146,16 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 - 창을 모두 닫고 15분이 지나면 프로그램이 저절로 꺼집니다. 운영 배포가 도는 중에는 꺼지지 않습니다. 다시 켜도 진행 상황은 그대로입니다.
 - 내려받다가 끊기면 다시 켜세요. 받던 데서 이어서 받습니다. 필요한 파일을 모두 받은 뒤에는 인터넷이 없어도 켜집니다.
 
-### 0.2판을 쓰던 PC
+### 예전 판을 쓰던 PC
 
-풀어 둔 압축판 폴더나 예전에 설치한 IncidentSim은 지우고 새 파일로 설치하세요. 풀던 문제가 남아 있으면 먼저 선생님에게 물어보세요.
+0.2판이나 0.3.0판을 쓰던 PC는 예전 프로그램을 제거하고 새로 설치하세요. 예전 판의 기록은 새 판으로 옮겨지지 않습니다. 풀던 문제가 남아 있으면 제출할 파일을 먼저 받아 두고 선생님에게 물어보세요.
+
+- **0.2판**: 풀어 둔 압축판 폴더를 지우세요.
+- **0.3.0판, Windows**: 설정 → 앱 → 설치된 앱에서 **Deep Thought (IncidentSim)** 을 제거하세요.
+- **0.3.0판, macOS**: 터미널에서 `/Applications/IncidentSim.app/Contents/MacOS/IncidentSim --uninstall`을 실행하고, 응용 프로그램 폴더의 **IncidentSim**을 휴지통에 넣으세요.
+- **0.3.0판, Ubuntu**: `incident-sim --uninstall`을 실행하고, `sudo apt remove incident-sim`을 실행하세요.
+
+예전 판의 기록과 코드 폴더(사용자 폴더의 `.incident-sim`, `incident-sim-codebase`)까지 지우려면 제거하기 전에 예전 프로그램의 **데이터 모두 지우기**를 누르세요.
 
 ---
 
@@ -170,7 +177,7 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 
 ## 5. 화면 안내
 
-모든 화면의 뼈대가 같습니다.
+모든 화면이 같은 틀로 되어 있습니다.
 
 | 자리 | 내용 |
 | --- | --- |
@@ -179,7 +186,7 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 | 본문 | 지금 할 일 하나와 주 버튼 하나 |
 | 옆 칸 | 중요한 숫자 하나, 코드 폴더(폴더 열기, 경로 복사), 최근 기록 |
 
-**화면 색이 운영 상태입니다.** 정상이면 밝은 화면이고, 운영에 장애가 나면 화면 전체가 검게 뒤집힙니다. 주황은 잘못된 것에만 씁니다.
+**화면 색이 운영 상태입니다.** 정상이면 밝은 화면이고, 운영에 장애가 나면 화면 전체가 검게 바뀝니다. 주황은 잘못된 것에만 씁니다.
 
 | 도구 | 하는 일 |
 | --- | --- |
@@ -230,7 +237,7 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 2. 되돌릴 수 없다는 것을 확인하는 칸을 채우세요.
 3. **운영 배포 시작**을 누르세요.
 
-운영 배포는 하루치 요청을 흘려 보냅니다. **실제로 5분쯤** 걸리고 시작하면 멈출 수 없습니다. 그동안 로그와 질문은 쓸 수 있습니다.
+운영 배포에서는 하루치 요청이 들어옵니다. **실제로 5분쯤** 걸리고 시작하면 멈출 수 없습니다. 그동안 로그와 질문은 쓸 수 있습니다.
 
 - 빌드 실패나 실행 실패로 끝나면 **횟수가 줄지 않습니다.** 고친 뒤 다시 하세요.
 - 배포가 도는 동안 PC가 절전에 들어가면 결과를 믿을 수 없어 중단됩니다. 이때도 횟수는 그대로입니다. **배포 중에는 노트북 덮개를 닫지 마세요.**
@@ -238,7 +245,7 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 ### ⑤ 결과에 대응
 
 - **문제가 없으면** 화면은 밝은 그대로이고 보고서 단계로 넘어갑니다. ⑦로 가세요.
-- **장애가 나면** 화면이 검게 뒤집히고 단계가 늘어납니다. 알림에는 겉으로 드러난 증상만 적혀 있습니다. 원인은 직접 찾으세요.
+- **장애가 나면** 화면이 검게 바뀌고 단계가 늘어납니다. 알림에는 겉으로 드러난 증상만 적혀 있습니다. 원인은 직접 찾으세요.
 
 원인을 찾는 도구는 둘입니다.
 
@@ -296,7 +303,7 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 
 ## 8. 테스터 약속
 
-- **AI 도구에는 코드 폴더만 열어 줍니다.** 프로그램 폴더와 사용자 폴더의 `.incident-sim`은 AI 도구에 보여 주지 않습니다.
+- **AI 도구에는 코드 폴더만 열어 줍니다.** 프로그램 폴더와 사용자 폴더의 `.deep-thought`는 AI 도구에 보여 주지 않습니다.
 - 프로그램을 뜯어보거나(디컴파일), 기록을 지워 운영 배포를 다시 하지 않습니다.
 - 실험이 끝날 때까지 다른 테스터에게 답이나 단서를 알려 주지 않습니다.
 - AI와 나눈 대화는 지우지 않고 보고서에 붙입니다.
@@ -310,7 +317,7 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 문제마다 **3일 안에** 냅니다.
 
 1. 문제 해결 보고서(기록 화면에서 받은 양식으로 작성)
-2. 과정 기록 파일(`incident-sim-<문제>-<날짜>.md`)
+2. 과정 기록 파일(`deep-thought-<문제>-<날짜>.md`)
 3. AI 도구와 나눈 대화 기록(내보내기 파일이나 캡처)
 
 제출한 뒤에 보고서를 바탕으로 10~15분 정도 짧은 인터뷰를 합니다.
@@ -323,15 +330,15 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 
 | 폴더 | 들어 있는 것 | 위치 |
 | --- | --- | --- |
-| 코드 폴더 | 내가 고치는 코드 | 준비 화면에서 정한 곳 |
-| 데이터 폴더 | 기록, 로그, 실행 결과, 첫 빌드 때 받은 라이브러리, 창 설정 | 사용자 폴더의 `.incident-sim` |
+| 코드 폴더 | 내가 고치는 코드 | 준비 화면에서 정한 곳. 기본값은 사용자 폴더의 `deep-thought-codebase` |
+| 데이터 폴더 | 기록, 로그, 실행 결과, 첫 빌드 때 받은 라이브러리, 창 설정 | 사용자 폴더의 `.deep-thought` |
 | 프로그램 폴더 | 프로그램 본체, 라이브러리, 필요하면 Java | 아래 표 |
 
 | PC | 프로그램 폴더 |
 | --- | --- |
-| Windows | `%LOCALAPPDATA%\IncidentSim` |
-| macOS | `~/Library/Application Support/IncidentSim` |
-| Ubuntu | `~/.local/share/incident-sim` |
+| Windows | `%LOCALAPPDATA%\DeepThought` |
+| macOS | `~/Library/Application Support/DeepThought` |
+| Ubuntu | `~/.local/share/deep-thought` |
 
 프로그램은 코드 폴더 안에 파일을 만들지 않습니다. 빌드 결과물과 기록은 모두 데이터 폴더에만 생깁니다.
 
@@ -340,9 +347,9 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 1. 제출할 파일을 먼저 받아 두세요.
 2. 프로그램의 **데이터 모두 지우기**를 누르세요. 지울 폴더를 확인하고 **모두 지우고 끄기**를 누르면 데이터 폴더와 (고르면) 코드 폴더를 지우고 프로그램이 꺼집니다. 되돌릴 수 없습니다. 실행이 도는 중에는 끝난 뒤에 지울 수 있습니다.
 3. 프로그램을 제거하세요.
-   - **Windows**: 설정 → 앱 → 설치된 앱에서 **Deep Thought (IncidentSim)** 을 제거하세요.
-   - **macOS**: 터미널에서 `/Applications/IncidentSim.app/Contents/MacOS/IncidentSim --uninstall`을 실행하고, 앱을 휴지통에 넣으세요.
-   - **Ubuntu**: `incident-sim --uninstall`을 실행하고, `sudo apt remove incident-sim`을 실행하세요.
+   - **Windows**: 설정 → 앱 → 설치된 앱에서 **Deep Thought**를 제거하세요.
+   - **macOS**: 터미널에서 `"/Applications/Deep Thought.app/Contents/MacOS/DeepThought" --uninstall`을 실행하고, 앱을 휴지통에 넣으세요.
+   - **Ubuntu**: `deep-thought --uninstall`을 실행하고, `sudo apt remove deep-thought`를 실행하세요.
 
 프로그램만 제거하면 데이터 폴더와 코드 폴더는 남습니다.
 
@@ -368,7 +375,7 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 네. 코드 폴더의 `README.md`에 실행 방법이 있습니다. 프로그램의 로컬 확인·운영 배포와는 별개입니다.
 
 **Q. 가상 시각은 뭔가요?**
-운영 배포에서 하루치 운영을 5분쯤에 보여 주려고, 프로그램 안의 시계가 300배 빠르게 흐릅니다. 로그와 실행 화면의 시각은 이 가상 시각입니다.
+운영 배포에서 하루치 운영을 5분쯤으로 줄여 보여 주려고, 프로그램 안의 시계가 300배 빠르게 흐릅니다. 로그와 실행 화면의 시각은 이 가상 시각입니다.
 
 **Q. 실수로 운영 배포를 눌렀어요.**
 영향 분석 메모를 쓰고 확인 칸을 채운 뒤 시작 버튼을 눌러야만 시작됩니다. 그 전에는 취소할 수 있습니다.
