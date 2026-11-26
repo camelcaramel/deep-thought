@@ -44,10 +44,10 @@
 
 <main id="main">
 
-<section class="split hero" aria-labelledby="h-hero">
-  <div class="col">
+<section class="hero" aria-labelledby="h-hero">
+  <div class="hero-in">
     <h1 id="h-hero" class="hero-title">생각해야 풀리는 실무 문제</h1>
-    <p class="lead measure">Deep Thought는 실무 문제 시뮬레이터입니다. 티켓을 받아 코드를 고치고, 운영에 배포하고, 그 결과에 대응합니다. 모두 내&nbsp;PC에서 합니다.</p>
+    <p class="lead">티켓을 받아 코드를 수정하고, 운영 배포하며, 오류에 대응합니다.</p>
     <div class="get" data-get>
       <a class="primary" data-get-main href="https://github.com/camelcaramel/deep-thought/releases/latest/download/DeepThought-windows.exe"><span data-get-label>Windows용 내려받기</span><svg aria-hidden="true" width="16" height="28" viewBox="0 0 16 28" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 0v25M1 18l7 7 7-7"/></svg></a>
       <p class="others">
@@ -58,40 +58,13 @@
       <p class="say" data-mobile hidden>PC에서 쓰는 프로그램입니다. 이 주소를 PC에서 여세요.</p>
     </div>
   </div>
-  <div class="col side shots" role="region" aria-roledescription="슬라이드" aria-labelledby="h-shots" data-shots>
-    <p class="eyebrow" id="h-shots">실제 화면 <span class="shots-count" data-shots-count aria-hidden="true"></span></p>
-    <ul class="shots-track" data-shots-track tabindex="0" aria-label="프로그램 화면 네 장">
-      <li class="shot" role="group" aria-roledescription="화면" aria-label="1 / 4">
-        <figure>
-          <img src="assets/shots/01-list.webp" width="784" height="549" decoding="async" alt="Deep Thought의 문제 고르기 화면. 위에 단계 줄(문제 고르기, 코드 폴더, 시작)이 있고, 아래에 풀 문제 목록이 있습니다.">
-          <figcaption>처음 켜면 풀 문제를 고릅니다</figcaption>
-        </figure>
-      </li>
-      <li class="shot" role="group" aria-roledescription="화면" aria-label="2 / 4">
-        <figure>
-          <img src="assets/shots/02-check.webp" width="784" height="549" loading="lazy" decoding="async" alt="필요한 파일을 받고 점검하는 화면. 큰 숫자로 점검 항목 3개 중 2개가 끝났다고 나오고, 그 아래에 진행 막대가 있습니다.">
-          <figcaption>필요한 파일을 받고 PC를 점검합니다</figcaption>
-        </figure>
-      </li>
-      <li class="shot" role="group" aria-roledescription="화면" aria-label="3 / 4">
-        <figure>
-          <img src="assets/shots/03-ticket.webp" width="784" height="549" loading="lazy" decoding="async" alt="티켓 화면. 백엔드 리드가 보낸 티켓으로, 주문 조회 API 응답의 필드명 오타를 고쳐 달라는 요청입니다.">
-          <figcaption>회사에서 일을 받듯 티켓을 받습니다</figcaption>
-        </figure>
-      </li>
-      <li class="shot" role="group" aria-roledescription="화면" aria-label="4 / 4">
-        <figure>
-          <img src="assets/shots/04-building.webp" width="784" height="549" loading="lazy" decoding="async" alt="로컬 확인 화면. 코드를 빌드하는 중이고, 빌드, 실행, 요청 보내기, 판정 네 단계가 차례로 나옵니다.">
-          <figcaption>고친 코드는 로컬 확인으로 먼저 돌려 봅니다</figcaption>
-        </figure>
-      </li>
+  <div class="band" data-band aria-label="문제 목록">
+    <ul class="band-list">
+      <li>주문 조회 응답 필드명 정리</li>
+      <li>정산 배치 예외 처리 정리</li>
+      <li>재고 음수 표시</li>
+      <li>선착순 한정 판매 수량 초과</li>
     </ul>
-    <div class="shots-ctl" data-shots-ctl hidden>
-      <button class="shots-btn" type="button" data-shots-prev aria-label="앞 화면"><svg aria-hidden="true" width="24" height="16" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M28 8H3M10 1L3 8l7 7"/></svg></button>
-      <span class="shots-dots" data-shots-dots></span>
-      <button class="shots-btn" type="button" data-shots-next aria-label="다음 화면"><svg aria-hidden="true" width="24" height="16" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M0 8h25M18 1l7 7-7 7"/></svg></button>
-      <button class="link shots-play" type="button" data-shots-play>멈추기</button>
-    </div>
   </div>
 </section>
 
@@ -325,7 +298,6 @@
       <li>실험이 끝날 때까지 다른 테스터에게 답이나 단서를 알려 주지 않습니다.</li>
       <li>AI와 나눈 대화는 지우지 않고 보고서에 붙입니다.</li>
     </ul>
-    <p class="measure">약속을 어긴 것을 솔직하게 적어 내는 것은 감점하지 않습니다.</p>
   </div>
   <div class="col side" id="contact">
     <p class="eyebrow">문의 · Discord 사용자명</p>
