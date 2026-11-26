@@ -5,8 +5,8 @@
   var REPO = 'camelcaramel/deep-thought';
   var BASE = 'https://github.com/' + REPO + '/releases/latest/download/';
   var FILES = {
-    windows: { name: 'Windows', file: 'DeepThought-windows.exe', size: '151KB' },
-    macos: { name: 'macOS', file: 'DeepThought-macos.zip', size: '13KB' },
+    windows: { name: 'Windows', file: 'DeepThought-windows.exe', size: '153KB' },
+    macos: { name: 'macOS', file: 'DeepThought-macos.zip', size: '14KB' },
     ubuntu: { name: 'Ubuntu', file: 'DeepThought-ubuntu.deb', size: '13KB' }
   };
   var $ = function (s, root) { return (root || document).querySelector(s); };

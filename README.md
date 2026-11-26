@@ -93,12 +93,12 @@ Java는 따로 설치하지 않아도 됩니다. 이 PC에 JDK 21이 없으면 �
 
 ### 받을 파일
 
-**설치 파일은 151KB**(macOS와 Ubuntu는 13KB)이고, 나머지는 프로그램이 필요할 때 알아서 받습니다.
+**설치 파일은 153KB**(macOS 14KB, Ubuntu 13KB)이고, 나머지는 프로그램이 필요할 때 알아서 받습니다.
 
 | PC | 받을 파일 | 크기 |
 | --- | --- | --- |
-| Windows 10·11 (64비트) | [`DeepThought-windows.exe`](https://github.com/camelcaramel/deep-thought/releases/latest/download/DeepThought-windows.exe) | 151KB |
-| macOS 11 이상 (Apple Silicon·Intel) | [`DeepThought-macos.zip`](https://github.com/camelcaramel/deep-thought/releases/latest/download/DeepThought-macos.zip) | 13KB |
+| Windows 10·11 (64비트) | [`DeepThought-windows.exe`](https://github.com/camelcaramel/deep-thought/releases/latest/download/DeepThought-windows.exe) | 153KB |
+| macOS 11 이상 (Apple Silicon·Intel) | [`DeepThought-macos.zip`](https://github.com/camelcaramel/deep-thought/releases/latest/download/DeepThought-macos.zip) | 14KB |
 | Ubuntu 22.04 이상 (64비트) | [`DeepThought-ubuntu.deb`](https://github.com/camelcaramel/deep-thought/releases/latest/download/DeepThought-ubuntu.deb) | 13KB |
 
 나머지를 받는 때와 양은 이렇습니다. 한 번 받으면 그다음부터는 바뀐 것만 받습니다.
